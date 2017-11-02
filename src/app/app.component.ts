@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
+import { User } from './model/user';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  userList: User[];
+  constructor(private http: Http) { }
+  getUsers() {
+    this.http.get('http://localhost:3005/Users')
+      .subscribe(res => this.userList =
+        res.json() as User[]);
+  }
 }

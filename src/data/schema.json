@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "Users": {
+            "type": "array",
+            "minItems": 5,
+            "maxItems": 25,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id":{
+                        "type": "string",
+                        "faker": "random.uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "faker": "name.findName"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "faker":"internet.email"
+                    },
+                    "age":{
+                        "type":"integer",
+                        "minimum": 0,
+                        "maximum": 50
+                    },
+                    "password":{
+                        "type":"string",
+                        "faker":"internet.password"
+                    },
+                    "sexo": {
+                        "enum": [ "M", "F", "ND" ]
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "email",
+                    "age",
+                    "password",
+                    "sexo"
+                ]
+            }
+        }
+    },
+    "required":[
+        "Users"
+    ]
+}

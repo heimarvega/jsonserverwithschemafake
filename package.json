@@ -1,10 +1,13 @@
 {
-  "name": "app-demo",
+  "name": "app-jsonserverschemafake",
   "version": "0.0.0",
   "license": "MIT",
+  "author": "Heimar Vega",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "generate-mock-api-data": "node src/generateData.js",    
+    "prestart": "npm run generate-mock-api-data",
+    "start": "json-server --watch ./src/data/db.json --port 3005 | ng serve -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -35,6 +38,7 @@
     "codelyzer": "~3.2.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
+    "json-schema-faker": "^0.4.6",
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.1.1",
     "karma-cli": "~1.0.1",
