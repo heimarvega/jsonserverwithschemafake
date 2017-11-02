@@ -1,9 +1,14 @@
 # JsonServerWithSchemaFaker app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
+Este proyecto permite consumir un servicio api rest en un json server virtuak teniendo en cuenta un schema y genración automática de datos.
+
+El proyecto base fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7  
 
 ## Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecute `npm start` para servidor de desarrollo. en la siguiente url queda publicada la app agular `http://localhost:4200/`. 
 
-Navigate to `http://localhost:3005` for api Rest.
+El servidor del api rest se publica en la siguiente dirección `http://localhost:3005`.
+
+Los datos autogenerados se basan en el esquema que se encuentra en el archivo data/schema.json, los datos son almacenados en el archivo data/db.json.
+
